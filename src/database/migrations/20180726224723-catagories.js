@@ -9,6 +9,46 @@ module.exports = {
       Example:
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
+
+      id: {
+
+	allowNull: false,
+
+	primaryKey: true,
+	
+        type: Sequelize.STRING
+
+      },
+
+      catName: {
+
+	allowNull: false,
+	
+	defaultValue: 'Groceries'
+	
+        type: Sequelize.STRING
+
+      },
+
+
+      createdAt: {
+
+        allowNull: false,
+
+        type: Sequelize.DATE
+
+      },
+
+      updatedAt: {
+
+        allowNull: false,
+
+        type: Sequelize.DATE
+
+      }
+
+    });
+
   },
 
   down: (queryInterface, Sequelize) => {

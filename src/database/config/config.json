@@ -1,23 +1,23 @@
 {
     "development": {
-      "username": "postgres",
-      "password": "",
-      "database": "",
+      "username": "root",
+      "password": "null",
+      "database": "db: create Budget Buddy",
       "host": "localhost",
-      "dialect": "postgres"
+      "dialect": "mysql"
     },
     "test": {
-      "username": "postgres",
-      "password": "",
-      "database": "",
+      "username": "root",
+      "password": "null",
+      "database": "db: create Budget Buddy",
       "host": "localhost",
-      "dialect": "postgres"
+      "dialect": "mysql"
     },
     "production": {
-      "username": "postgres",
-      "password": "",
-      "database": "",
+  "username": "root",
+      "password": "null",
+      "database": "db: create Budget Buddy",
       "host": "localhost",
-      "dialect": "postgres"
+      "dialect": "mysql"
     }
   }
