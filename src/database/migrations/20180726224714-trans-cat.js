@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-	return queryInterface.dropTable('users');
+	return queryInterface.createTable('trans-cat', {
     /*
       Add altering commands here.
       Return a promise to correctly handle asynchronicity.
@@ -15,7 +15,11 @@ module.exports = {
 
 	allowNull: false,
 
+	autoIncrement: true,
+
 	primaryKey: true,
+
+	foreignKey: true,
 	
         type: Sequelize.STRING
 
@@ -25,15 +29,13 @@ module.exports = {
 
 	allowNull: false,
 
-        autoIncrement: true,
-
         type: Sequelize.INTEGER
 
       },
 
       amount: {
 
-        type: Sequelize.INTEGER
+        type: Sequelize.DOUBLE
 
       },
 
@@ -72,6 +74,6 @@ module.exports = {
       return queryInterface.dropTable('users');
     */
 
-	return queryInterface.dropTable('users');
+	return queryInterface.dropTable('trans-cat');
   }
 };

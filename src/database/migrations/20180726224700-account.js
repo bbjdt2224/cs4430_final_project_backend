@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-	return queryInterface.createTable('users', {
+	return queryInterface.createTable('account', {
 
     /*
       Add altering commands here.
@@ -16,7 +16,11 @@ module.exports = {
 
 	allowNull: false,
 
+	autoIncrement: true,
+
 	primaryKey: true,
+
+	foreignKey: true,
 	
         type: Sequelize.INTEGER
 
@@ -25,8 +29,6 @@ module.exports = {
       userId: {
 
 	allowNull: false,
-
-	foreignKey: true,
 	
         type: Sequelize.INTEGER
 
@@ -35,8 +37,6 @@ module.exports = {
       acctNum: {
 
 	allowNull: false,
-
-        autoIncrement: true,
 
         type: Sequelize.INTEGER
 
@@ -52,6 +52,8 @@ module.exports = {
       },
 
       acctName: {
+
+	allowNull: false,
 
         type: Sequelize.STRING
 
@@ -86,6 +88,6 @@ module.exports = {
       return queryInterface.dropTable('users');
     */
 
-	return queryInterface.dropTable('users');
+	return queryInterface.dropTable('account');
   }
 };

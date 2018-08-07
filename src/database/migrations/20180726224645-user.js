@@ -25,6 +25,8 @@ module.exports = {
       },
 
       firstName: {
+	
+	allowNull: false,
 
         type: Sequelize.STRING
 
@@ -32,11 +34,15 @@ module.exports = {
 
       lastName: {
 
+	allowNull: false,
+
         type: Sequelize.STRING
 
       },
 
       email: {
+
+	allowNull: false,
 
         type: Sequelize.STRING
 
@@ -44,25 +50,11 @@ module.exports = {
 
       password: {
 
+	allowNull: false,
+
         type: Sequelize.STRING
 
      },
-
-      isTracker: {
-
-        type: Sequelize.BOOLEAN,
-
-        allowNull: false,
-
-        defaultValue: '0'
-
-      },
-
-      role: {
-
-        type: Sequelize.STRING
-
-      },
 
       createdAt: {
 

@@ -2,6 +2,8 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
+	return queryInterface.createTable('catagories', {
+
     /*
       Add altering commands here.
       Return a promise to correctly handle asynchronicity.
@@ -14,7 +16,11 @@ module.exports = {
 
 	allowNull: false,
 
+	autoIncrement: true,
+
 	primaryKey: true,
+
+	foreignKey: true,
 	
         type: Sequelize.STRING
 
@@ -23,8 +29,6 @@ module.exports = {
       catName: {
 
 	allowNull: false,
-	
-	defaultValue: 'Groceries'
 	
         type: Sequelize.STRING
 
@@ -59,5 +63,7 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
+
+	return queryInterface.dropTable('catagories');
   }
 };
