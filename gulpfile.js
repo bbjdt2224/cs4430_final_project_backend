@@ -15,15 +15,15 @@ gulp.task('nodemon', () => {
 });
 
 gulp.task('compile', () => {
-    const tsProject = tsc.createProject('server/src/tsconfig.json');
+    const tsProject = tsc.createProject('src/tsconfig.json');
     const result = tsProject.src().pipe(tsProject());
 
-    result.js.pipe(gulp.dest('server/dist'));
+    result.js.pipe(gulp.dest('dist'));
 });
 
 
 gulp.task('tslint', () =>
-    gulp.src('./server/src/main.ts')
+    gulp.src('./src/main.ts')
         .pipe(tslint({
             formatter: 'prose'
         }))

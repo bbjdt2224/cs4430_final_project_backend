@@ -1,4 +1,6 @@
 node_modules/
-server/dist
+dist
 src/**/*.js.map
 dist/**/*
+src/database/config/*
+

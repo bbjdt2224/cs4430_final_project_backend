@@ -2,6 +2,7 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as session from 'express-session';
+import users from './modules/users/users.routes';
 
 const app: express.Express = express();
 
@@ -11,20 +12,6 @@ app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//var db  = require('./database/models/index.js')
-
-//var users = require('./modules/users/users.routes.js')
-
-// modules
-
-// Middleware
-
-// Routes
-
-// connect to db
-
-// set static folder to serve angular app
-// app.use(express.static(path.join(__dirname, staticDir)));
-
+users(app);
 
 app.listen(3000, () => console.log('app is listening on port 3000'));
