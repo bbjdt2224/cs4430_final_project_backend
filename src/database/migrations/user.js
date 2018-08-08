@@ -1,17 +1,11 @@
 'use strict';
 
 module.exports = {
+
   up: (queryInterface, Sequelize) => {
-	return queryInterface.createTable('users', {
 
-      /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
+    return queryInterface.createTable('users', {
 
-      Example:
-      return queryInterface.createTable('users', { id: Sequelize.INTEGER });
-      */	
-	
       id: {
 
         allowNull: false,
@@ -25,8 +19,6 @@ module.exports = {
       },
 
       firstName: {
-	
-	allowNull: false,
 
         type: Sequelize.STRING
 
@@ -34,15 +26,11 @@ module.exports = {
 
       lastName: {
 
-	allowNull: false,
-
         type: Sequelize.STRING
 
       },
 
       email: {
-
-	allowNull: false,
 
         type: Sequelize.STRING
 
@@ -50,11 +38,25 @@ module.exports = {
 
       password: {
 
-	allowNull: false,
-
         type: Sequelize.STRING
 
      },
+
+      isTracker: {
+
+        type: Sequelize.BOOLEAN,
+
+        allowNull: false,
+
+        defaultValue: '0'
+
+      },
+
+      role: {
+
+        type: Sequelize.STRING
+
+      },
 
       createdAt: {
 
@@ -77,10 +79,10 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-    */
-	return queryInterface.dropTable('users');
+
+    return queryInterface.dropTable('users');
+
   }
+
 };
+
