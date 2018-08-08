@@ -1,79 +1,44 @@
 'use strict';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-	return queryInterface.createTable('trans-cat', {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
+    up: (queryInterface, Sequelize) => {
+        return queryInterface.createTable('trans-cat', {
 
-      Example:
-      return queryInterface.createTable('users', { id: Sequelize.INTEGER });
-    */
+            id: {
+                allowNull: false,
+                autoIncrement: true,
+                primaryKey: true,
+                type: Sequelize.STRING
+            },
 
-      id: {
+            transId: {
+                allowNull: false,
+                type: Sequelize.INTEGER
+            },
 
-	allowNull: false,
+            amount: {
+                type: Sequelize.DOUBLE
+            },
 
-	autoIncrement: true,
+            catId: {
+                type: Sequelize.INTEGER
+            },
 
-	primaryKey: true,
+            createdAt: {
+                allowNull: false,
+                type: Sequelize.DATE
+            },
 
-	foreignKey: true,
-	
-        type: Sequelize.STRING
+            updatedAt: {
+                allowNull: false,
+                type: Sequelize.DATE
+            }
 
-      },
+        });
 
-      transId: {
+    },
 
-	allowNull: false,
-
-        type: Sequelize.INTEGER
-
-      },
-
-      amount: {
-
-        type: Sequelize.DOUBLE
-
-      },
-
-      catId: {
-
-	type: Sequelize.INTEGER
-
-      },
-
-      createdAt: {
-
-        allowNull: false,
-
-        type: Sequelize.DATE
-
-      },
-
-      updatedAt: {
-
-        allowNull: false,
-
-        type: Sequelize.DATE
-
-      }
-
-    });
-
-  },
-
-  down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.dropTable('users');
-    */
-
-	return queryInterface.dropTable('trans-cat');
-  }
+    down: (queryInterface, Sequelize) => {
+        return queryInterface.dropTable('trans-cat');
+    }
 };

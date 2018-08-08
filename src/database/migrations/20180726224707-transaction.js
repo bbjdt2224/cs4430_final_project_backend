@@ -1,89 +1,49 @@
 'use strict';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-	return queryInterface.createTable('transaction', {
+    up: (queryInterface, Sequelize) => {
+        return queryInterface.createTable('transaction', {
 
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
+            id: {
+                allowNull: false,
+                autoIncrement: true,
+                primaryKey: true,
+                type: Sequelize.INTEGER
+            },
 
-      Example:
-      return queryInterface.createTable('users', { id: Sequelize.INTEGER });
-    */
+            acctNum: {
+                allowNull: false,
+                foreignKey: true,
+                type: Sequelize.INTEGER
+            },
 
-      id: {
+            vendor: {
+                type: Sequelize.STRING
+            },
 
-	allowNull: false,
+            amount: {
+                type: Sequelize.DOUBLE
+            },
 
-	autoIncrement: true,
+            date: {
+                type: Sequelize.DATE
+            },
 
-	primaryKey: true,
+            createdAt: {
+                allowNull: false,
+                type: Sequelize.DATE
+            },
 
-	foreignKey: true,
-	
-        type: Sequelize.INTEGER
+            updatedAt: {
+                allowNull: false,
+                type: Sequelize.DATE
+            }
 
-      },
+        });
 
-      acctNum: {
+    },
 
-	allowNull: false,
-
-	foreignKey: true,
-
-        type: Sequelize.INTEGER
-
-      },
-
-      vendor: {
-	
-        type: Sequelize.STRING
-
-      },
-
-      amount: {
-
-        type: Sequelize.DOUBLE
-
-      },
-
-      date: {
-
-	type: Sequelize.DATE
-
-      },
-
-      createdAt: {
-
-        allowNull: false,
-
-        type: Sequelize.DATE
-
-      },
-
-      updatedAt: {
-
-        allowNull: false,
-
-        type: Sequelize.DATE
-
-      }
-
-    });
-
-  },
-
-  down: (queryInterface, Sequelize) => {
-
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.dropTable('users');
-    */
-
-	return queryInterface.dropTable('transaction');
-  }
+    down: (queryInterface, Sequelize) => {
+        return queryInterface.dropTable('transaction');
+    }
 };
