@@ -9,10 +9,10 @@ const config = configfile[env];
 const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 const db:any = {
-  // account: sequelize.import('./account'),
-  // transaction: sequelize.import('./transaction'),
-  // transcat: sequelize.import('./transcat'),
-  // catagories: sequelize.import('./catagories'),
+  account: sequelize.import('./account'),
+  transaction: sequelize.import('./transaction'),
+  transcat: sequelize.import('./transcat'),
+  catagories: sequelize.import('./catagories'),
   user: sequelize.import('./user')
 };
 
