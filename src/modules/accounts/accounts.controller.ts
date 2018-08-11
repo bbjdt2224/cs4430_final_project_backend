@@ -10,11 +10,21 @@ class accountController {
     }
 
     getAccount(req, res){
-
+		db.account.findOne({
+				where:{
+					id = req.params['id'];
+				}
+			}).then(accounts => {
+				res.send(accounts);
+			});
     }
 
     getTransaction(req, res){
-
+		db.account.findOne(
+			transaction{
+				
+			}
+		)
     }
 
     addTransaction(req, res){
@@ -22,7 +32,13 @@ class accountController {
     }
 
     addAccount(req, res){
-
+		db.Account.create({
+			nickname: req.body.nickname,
+			type: req.body.type,
+			bankRefrence: req.body.bankRefrence
+		}).then(user =>{
+			res.send(user);
+		})
     }
 }
 
