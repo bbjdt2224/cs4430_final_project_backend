@@ -2,7 +2,7 @@
 
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('account', {
+        return queryInterface.createTable('accounts', {
 
             id: {
                 allowNull: false,
@@ -16,17 +16,17 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
 
-            acctNum: {
+            bankRefrence: {
                 allowNull: false,
                 type: Sequelize.INTEGER
             },
 
-            acctType: {
+            type: {
                 defaultValue: 'Checking',
                 type: Sequelize.STRING
             },
 
-            acctName: {
+            nickname: {
                 allowNull: false,
                 type: Sequelize.STRING
             },

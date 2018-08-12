@@ -1,7 +1,7 @@
 
 module.exports = (sequelize, DataTypes) => {
-  const catagory = sequelize.define('catagory', {
-    name: sequelize.STRING
+  const catagory = sequelize.define('catagotries', {
+    name: DataTypes.STRING
   }, {});
 
   catagory.associate = function (models) {

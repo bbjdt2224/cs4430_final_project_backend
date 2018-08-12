@@ -1,7 +1,7 @@
 
 module.exports = (sequelize, DataTypes) => {
   const transcat = sequelize.define('transcat', {
-    amount: sequelize.DECIMAL
+    amount: DataTypes.DECIMAL
   }, {});
 
   transcat.associate = function (models) {

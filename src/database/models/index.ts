@@ -12,7 +12,7 @@ const db:any = {
   account: sequelize.import('./account'),
   transaction: sequelize.import('./transaction'),
   transcat: sequelize.import('./transcat'),
-  catagories: sequelize.import('./catagories'),
+  catagory: sequelize.import('./catagory'),
   user: sequelize.import('./user')
 };
 

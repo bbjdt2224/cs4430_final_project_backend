@@ -4,15 +4,19 @@ import db from '../../database/models/index';
 class accountController {
     
     getAllAccounts(req, res){
-        db.account.query('Select ...').then(accounts => {
-            res.send(accounts);
-        })
+        db.account.findAll({
+			where: {
+				userId: req.params['userId']
+			}
+		}).then(accounts => {
+			res.send(accounts);
+		});
     }
 
     getAccount(req, res){
 		db.account.findOne({
-				where:{
-					id = req.params['id'];
+				where: {
+					id: req.params['id']
 				}
 			}).then(accounts => {
 				res.send(accounts);
@@ -20,11 +24,13 @@ class accountController {
     }
 
     getTransaction(req, res){
-		db.account.findOne(
-			transaction{
-				
+		db.transaction.findOne({
+			where: {
+				id: req.params['id']
 			}
-		)
+		}).then(transaction => {
+			res.send(transaction);
+		})
     }
 
     addTransaction(req, res){
@@ -32,10 +38,11 @@ class accountController {
     }
 
     addAccount(req, res){
-		db.Account.create({
+		db.account.create({
 			nickname: req.body.nickname,
 			type: req.body.type,
-			bankRefrence: req.body.bankRefrence
+			bankRefrence: req.body.bankRefrence,
+			userId: 1
 		}).then(user =>{
 			res.send(user);
 		})
