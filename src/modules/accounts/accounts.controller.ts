@@ -39,7 +39,9 @@ class accountController {
           vendor: req.body.vendor,
           ammount: req.body.ammount,
           createdAt: req.body.ammount
-        })
+        }).then(transaction => {
+					res.send(transaction)
+				})
     }
 
     addAccount(req, res){
