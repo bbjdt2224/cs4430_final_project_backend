@@ -2,7 +2,7 @@ import db from '../../database/models/index';
 
 
 class accountController {
-    
+
     getAllAccounts(req, res){
         db.account.findAll({
 			where: {
@@ -34,7 +34,14 @@ class accountController {
     }
 
     addTransaction(req, res){
-        
+        db.account.create({
+          acctNum: req.body.accountNum,
+          vendor: req.body.vendor,
+          ammount: req.body.ammount,
+          createdAt: req.body.ammount
+        }).then(transaction => {
+					res.send(transaction)
+				})
     }
 
     addAccount(req, res){
@@ -50,4 +57,3 @@ class accountController {
 }
 
 export default new accountController();
-
