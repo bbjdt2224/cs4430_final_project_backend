@@ -1,17 +1,17 @@
 export default {
   'development': {
-    'username': 'postgres',
-    'password': 'Bennett00',
-    'database': 'personal_banking',
+    'username': 'root',
+    'password': 'PleaseScanHere->',
+    'database': 'final_4430',
     'host': 'localhost',
-    'dialect': 'postgres'
+    'dialect': 'mysql'
   },
   'test': {
-    'username': 'postgres',
-    'password': '',
+    'username': 'root',
+    'password': 'PleaseScanHere->',
     'database': '',
     'host': 'localhost',
-    'dialect': 'postgres'
+    'dialect': 'po'
   },
   'production': {
     'username': 'postgres',

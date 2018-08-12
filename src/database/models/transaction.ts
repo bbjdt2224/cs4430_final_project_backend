@@ -1,9 +1,9 @@
 
 module.exports = (sequelize, DataTypes) => {
   const transaction = sequelize.define('transactions', {
-    vendor: sequelize.STRING,
-    amount: sequelize.DECIMAL,
-    date: { type: sequelize.DATE, defaultValue: sequelize.NOW }
+    vendor: DataTypes.STRING,
+    amount: DataTypes.DECIMAL,
+    date: { type: DataTypes.DATE, defaultValue: DataTypes.NOW }
   }, {});
 
   transaction.associate = function (models) {

@@ -1,13 +1,14 @@
 
 module.exports = (sequelize, DataTypes) => {
-  const accounts = sequelize.define('accounts', {
-    nickname: sequelize.TEXT,
-    type: sequelize.STRING,
-    bankRefrence: sequelize.STRING
+  const account = sequelize.define('account', {
+    nickname: DataTypes.STRING,
+    type: DataTypes.STRING,
+    bankRefrence: DataTypes.STRING,
+    userId: DataTypes.INTEGER
   }, {});
 
-  accounts.associate = function (models) {
+  account.associate = function (models) {
     // associations can be defined here
   };
-  return accounts;
+  return account;
 };

@@ -2,7 +2,7 @@
 
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('trans-cat', {
+        return queryInterface.createTable('trans-cats', {
 
             id: {
                 allowNull: false,

@@ -4,7 +4,7 @@ import AccountsController from './accounts.controller';
 
 export default (app: express.Express): void => {
 
-    app.get('/api/accounts', AccountsController.getAllAccounts);
+    app.get('/api/accounts/:userId', AccountsController.getAllAccounts);
 
     app.get('/api/account/:id', AccountsController.getAccount);
 
