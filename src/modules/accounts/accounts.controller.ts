@@ -2,7 +2,7 @@ import db from '../../database/models/index';
 
 
 class accountController {
-    
+
     getAllAccounts(req, res){
         db.account.findAll({
 			where: {
@@ -57,4 +57,3 @@ class accountController {
 }
 
 export default new accountController();
-
