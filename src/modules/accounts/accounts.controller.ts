@@ -14,12 +14,12 @@ class accountController {
     }
 
     getAccount(req, res){
-		db.account.findOne({
+		db.transaction.findAll({
 				where: {
-					id: req.params['id']
+					acctNum: req.params['id']
 				}
-			}).then(accounts => {
-				res.send(accounts);
+			}).then(tran => {
+				res.send(tran);
 			});
     }
 
@@ -34,7 +34,14 @@ class accountController {
     }
 
     addTransaction(req, res){
-        
+        db.transaction.create({
+			vendor: req.body.vendor,
+			amount: req.body.amount,
+			date: req.body.date,
+			acctNum: 1
+		}).then(transaction => {
+			res.send(transaction);
+		});
     }
 
     addAccount(req, res){
